@@ -2,10 +2,11 @@
 declare(strict_types=1);
 $i = 1;
 while ($i <= 5) {
-echo "i = $i\n";
+echo "i = $i<br>";
 $i++;
 }
 
+// menjumlahkan digit sebuah bilangan
 $n = 1234;
 $jumlah = 0;
 while ($n > 0) {

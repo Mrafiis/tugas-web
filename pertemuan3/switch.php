@@ -4,13 +4,13 @@ declare(strict_types=1);
 $pilihan = 2;
 
 switch ($pilihan){
-  case 1;
+  case 1:
     echo "Lihat Produk\n";
     break;
-  case 2;
-  echo "Transfer\n";
+  case 2:
+  echo "Transfer<br>";
   break;
-  case 3;
+  case 3:
   echo "Bayar Tagihan\n";
   break;
   default:
@@ -21,7 +21,7 @@ $jawab = 'y';
 switch ($jawab){
   case 'y':
   case 'Y':
-    echo "anda menjawab YA\n";
+    echo "anda menjawab YA<br>";
     break;
   case 'n':
   case 'N':

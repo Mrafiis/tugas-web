@@ -1,15 +1,20 @@
 <?php
 declare(strict_types=1);
-$a = 10;
-$b = 20;
-$maks = $a > $b ? $a : $b;
-echo "Maksimum: $maks\n";
-$nilai = 80;
-$status = $nilai >= 75 ? 'LULUS' : 'TIDAK LULUS';
-echo "Status: $status\n";
+// Cetak 1..5
+for ($i = 1; $i <= 5; $i++) {
+echo "Iterasi ke-$i<br>";
+}
 
-$input = "0";
-echo "Elvis ?: " . ($input ?: 'default') . "\n"; // default (karena "0" falsy)
-echo "Null ?? : " . ($input ?? 'default') . "\n"; // 0 (karena tidak null)
-$umur = $_GET['umur'] ?? 0;
-echo "Umur: $umur\n";
+// Jumlah deret 1..100
+$total = 0;
+for ($i = 1; $i <= 100; $i++) {
+$total += $i;
+}
+echo "Jumlah 1..100 = $total<br>";
+
+// Faktorial 5
+$faktorial = 1;
+for ($i = 1; $i <= 5; $i++) {
+$faktorial *= $i;
+}
+echo "5! = $faktorial<br>";

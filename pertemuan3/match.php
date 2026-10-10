@@ -10,13 +10,14 @@ $predikat = match ($huruf){
   'D'  => 'Cukup',
   default => 'Kurang',
 };
-echo "Hutuf $huruf -> $predikat\n";
+echo "Hutuf $huruf -> $predikat<br>";
 
 $hari = 'Minggu';
 $jenis = match ($hari){
   'Sabtu','Minggu' => 'Akhir pekan',
   default  => 'Hari kerja',
 };
+echo "$hari adalah $jenis<br>";
 
 $kode = 0;
 $hasil = match ($kode){

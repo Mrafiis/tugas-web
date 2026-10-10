@@ -6,7 +6,7 @@ $peran = 'admin';
 
 if($sudahLogin ){
   if ($peran === 'admin'){
-    echo "Selamat datang, admin. akses penuh. \n";
+    echo "Selamat datang, admin. akses penuh. <br>";
   } elseif ($peran === 'operator'){
     echo "Selamat datang, Operator. Akses terbatas. \n";
   } else {

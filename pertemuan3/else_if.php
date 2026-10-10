@@ -13,10 +13,8 @@ if($nilai >= 85 ){
   $huruf = 'D';
   } else {
   $huruf = 'E';
-
 }
-
-echo "Nilai $nilai -> huruf mutu $huruf\n";
+echo "Nilai $nilai -> huruf mutu $huruf<br>";
 
 $n = 90;
 if($n >= 50){
