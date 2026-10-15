@@ -1,0 +1,13 @@
+Options -Multiviews 
+  <IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+</IfModule>
+
+# Options -Multiviews : Menonaktifkan fitur Apache yang mencoba mencari file otomatis.
+# RewriteEngine On = Mengaktifkan fitur URL rewrite Apache. tanpa rewrite = index.php?url=items dengan rewrite = items aja udah
+# RewriteCond %{REQUEST_FILENAME} !-f = "Jika request bukan file asli" misal nya ada file public/styles.css lalu user meminta style.css maka apache langsung buka file itu tidak masuk ke php
+# RewriteCond %{REQUEST_FILENAME} !-d = "Jika request bukan folder" contoh : public/images itu akan tetap di buka langsung 
+# RewriteRule ^(.*)$ index.php?url=$1 [QSA,L] = misalnya user membuka localhost:8000/items apache mengubah menjadi index.php?url=items dan php membaca $_GET['url'] haslnya items lalu router akan menentukan ini harus masuk ke controller

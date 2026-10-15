@@ -1,0 +1,10 @@
+{
+    "intelephense.environment.includePaths": [
+        "./app/core",
+        "./app/models",
+        "./app/controllers"
+    ],
+    "intelephense.diagnostics.undefinedTypes": false,
+    "intelephense.diagnostics.undefinedMethods": false,
+    "intelephense.diagnostics.undefinedVariables": false
+}

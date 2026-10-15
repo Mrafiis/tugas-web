@@ -1,0 +1,5 @@
+# tidak semua boleh masuk ke git
+# contoh file yang tidak boleh masuk ke git adalah .env karena bersift pribadi dan logs juga
+.env 
+/logs
+# folder logs berisi catatan eror aplikasi
