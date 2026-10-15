@@ -2,20 +2,30 @@ CREATE DATABASE IF NOT EXISTS db_inventory
   CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE db_inventory;
 DROP TABLE IF EXISTS transactions, items, categories, users;
+
+-- membuat table user
 CREATE TABLE users (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  username VARCHAR(50) NOT NULL UNIQUE,
-  password VARCHAR(255) NOT NULL,
-  full_name VARCHAR(100),
-  role ENUM('admin','staff','manager') NOT NULL DEFAULT 'staff',
-  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    full_name VARCHAR(100),
+    role ENUM(
+        'admin',
+        'staff',
+        'manager'
+    ) DEFAULT 'staff',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- membuat table categories
 CREATE TABLE categories (
   id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(100) NOT NULL,
   description TEXT,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- membuat table items
 CREATE TABLE items (
   id INT AUTO_INCREMENT PRIMARY KEY,
   code VARCHAR(20) NOT NULL UNIQUE,
@@ -30,6 +40,8 @@ CREATE TABLE items (
   CONSTRAINT fk_items_category FOREIGN KEY (category_id)
   REFERENCES categories(id) ON DELETE SET NULL ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- membuat table transaction
 CREATE TABLE transactions (
   id INT AUTO_INCREMENT PRIMARY KEY,
   item_id INT NOT NULL,

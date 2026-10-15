@@ -1,5 +1,7 @@
+<!-- # satu satunya berkas yang di akses langsung 
+# pintu masuk aplikasi -->
 <?php
-require_once __DIR__ . '/../app/config/config.php';
+require_once __DIR__ . '/../app/config/config.php'; //Memasukkan file PHP lain dan memastikan file tersebut hanya dimuat satu kali.
 require_once __DIR__ . '/../app/core/helpers.php';
 spl_autoload_register(function ($class) {
   foreach (['core', 'controllers', 'models'] as $dir) {

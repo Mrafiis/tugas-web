@@ -6,6 +6,7 @@ class App {
 
 public function __construct() {
   $url = $this->parseURL();
+  Middleware::handle($url);
   if (!empty($url[0])) {
     $candidate = ucfirst($url[0]) . 'Controller';
     if (file_exists(ROOT_PATH . '/app/controllers/' . $candidate . '.php')) {
